@@ -1,25 +1,44 @@
+////
+////  read.c
+////  Text Adventure Game
+////
+////  Created by Johnny Wellington dos Santos on 6/1/15.
+////  Copyright (c) 2015 Johnny Wellington dos Santos. All rights reserved.
+////
 //
-//  read.c
-//  Text Adventure Game
+//#include "read.h"
 //
-//  Created by Johnny Wellington dos Santos on 6/1/15.
-//  Copyright (c) 2015 Johnny Wellington dos Santos. All rights reserved.
 //
-
-#include "read.h"
-
-FILE *file_pointer;
-
-FILE *open_story(char *filename){
-    file_pointer = fopen(filename, "r");
-    if(file_pointer == NULL){
-        printf("Ops, não consigo ler a sua história.\n"
-               "Será que está tudo certo com o formato do arquivo?\n");
-        exit(1);
-    }
-    else{
-        printf("Tudo certo com a abertura do arquivo, mas eu ainda não sei o "
-               "que fazer com ele. Por isso vou fecha-lo :/");
-        return file_pointer;
-    }
-};
+//void open_story(char *filename){
+//    story.file_pointer= fopen(filename, "r");
+//    if(story.file_pointer == NULL){
+//        printf("Ops, I can't read your history.\n"
+//               "Are you sure it's ok with the file?\n");
+//        exit(1);
+//    }
+//    else{
+//        printf("The file is fine, and it's open "
+//               "I'm returning a pointer to the file to whom asked me.");
+//    }
+//};
+//
+//
+//void load_scene(char *scene_identifier){
+//    char *current_identifier_pointer;
+//    char buffer[SCENE_IDENTIFIER_LENGTH];
+//    
+//    fseek(story.file_pointer, 0, SEEK_SET);
+//    while(!feof(story.file_pointer)){
+//        story.previews_position_in_file = ftell(story.file_pointer);
+//        if((story.current_char = fgetc(story.file_pointer)) == SCENE_IDENTIFIER){
+//            fseek(story.file_pointer, story.previews_position_in_file, SEEK_SET);
+//            current_identifier_pointer = fgets(
+//                buffer,
+//                SCENE_IDENTIFIER_LENGTH,
+//                story.file_pointer
+//            );
+//            story.current_scene_identifier[strcspn(buffer, "\r\n")] = 0;
+//        }
+//        
+//    }
+//};

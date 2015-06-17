@@ -12,11 +12,15 @@
 #include "read.h"
 
 int main(int argc, const char * argv[]) {
-    if(argc < 2){
-        printf("Eu preciso de um arquivo .story para ler. Sem ele não sei o "
-               "que fazer. :/");
-        exit(0);
-    }
-    open_story(argv[1]);
+//    if(argc < 2){
+//        printf("Eu preciso de um arquivo .story para ler. Sem ele não sei o "
+//               "que fazer. :/");
+//        exit(0);
+//    }
+    char story_path[256] = "/Users/johnny/Workspace/C/NginText/stories/prototype.story";
+//    printf("Please inform the path to the story you want to play:\n> " );
+    open_story(story_path);
+    load_scene("@Inicio");
+    printf("%s", story.current_scene_identifier);
     exit(0);
 }
