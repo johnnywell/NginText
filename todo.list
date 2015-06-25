@@ -1,11 +1,11 @@
-* Terminar definição da linguagem de roteiro da hitória.
-* Elaborar representação de estrutura de dados no arquivo de roteiro, como personagem, inimígos e itens.
-* Elaborar formato do script de eventos, como combates e puzzles.
-* Parser da linguagem.
-* Carregamento das cenas.
-* Lidar com redirecionamento de cenas.
-* Lidar com variáveis locais nas cenas.
-* Lidar com variáveis globais.
-* Conduzir combates e puzzles.
-* Função para embaralhar um arquivo .story e fazer o minify dele para distribuição.
+[ ] Terminar definição da linguagem de roteiro da hitória.
+[ ] Elaborar representação de estrutura de dados no arquivo de roteiro, como personagem, inimígos e itens.
+[ ] Elaborar formato do script de eventos, como combates e puzzles.
+[ ] Parser da linguagem.
+[ ] Carregamento das cenas.
+[ ] Lidar com redirecionamento de cenas.
+[ ] Lidar com variáveis locais nas cenas.
+[ ] Lidar com variáveis globais.
+[ ] Conduzir combates e puzzles.
+[ ] Função para embaralhar um arquivo .story e fazer o minify dele para distribuição.
 

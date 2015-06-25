@@ -13,6 +13,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
+
 #define BLOCK_COMMENT_IDENTIFIER  "'''"
 #define HEADER_IDENTIFIER '='
 #define LINE_COMMENT_IDENTIFIER '#'
@@ -34,7 +41,7 @@
 // ------ Structures definitions ------
 
 typedef struct scene_option {
-    char identifier[SCENE_OPTION_IDENTIFIER_LENGTH];
+    char *identifier;
     char target[SCENE_IDENTIFIER_LENGTH];
 };
 
@@ -43,6 +50,7 @@ typedef struct new_scene {
     char identifier[SCENE_IDENTIFIER_LENGTH];
     char description[SCENE_DESCRIPTION_MAX_LINES][SCENE_DESCRIPTION_MAX_COLS];
     struct scene_option options[SCENE_MAX_OPTIONS];
+	char *selected_option;
     
 };
 
@@ -52,8 +60,12 @@ typedef struct new_story {
     long previews_position_in_file;
     long position_in_file;
     char current_char;
-    char previews_scene_identifier[SCENE_IDENTIFIER_LENGTH];
+	char *current_line;
+    char *previews_scene_identifier;
+	char *current_description_line;
 };
+
+// const char *scene_identifier_regex = "^@[a-zA-Z0-9_]+$";
 
 // Defines a global story structure
 struct new_story story;
