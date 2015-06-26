@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+//#include 'slre.h'
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -40,35 +41,30 @@
 
 // ------ Structures definitions ------
 
-typedef struct scene_option {
+typedef struct option_t {
     char *identifier;
-    char target[SCENE_IDENTIFIER_LENGTH];
+    char *target;
 };
 
 
-typedef struct new_scene {
-    char identifier[SCENE_IDENTIFIER_LENGTH];
-    char description[SCENE_DESCRIPTION_MAX_LINES][SCENE_DESCRIPTION_MAX_COLS];
-    struct scene_option options[SCENE_MAX_OPTIONS];
-	char *selected_option;
-    
+typedef struct scene_t {
+    char *identifier;
+    struct option_t options[SCENE_MAX_OPTIONS];
+	char *selected_option;    
+	char *description;
 };
 
-typedef struct new_story {
+typedef struct story_t {
     FILE *file_pointer;
-    struct new_scene scene;
-    long previews_position_in_file;
-    long position_in_file;
-    char current_char;
+    struct scene_t scene;
 	char *current_line;
     char *previews_scene_identifier;
-	char *current_description_line;
 };
 
 // const char *scene_identifier_regex = "^@[a-zA-Z0-9_]+$";
 
 // Defines a global story structure
-struct new_story story;
+struct story_t story;
 
 
 void open_story();
